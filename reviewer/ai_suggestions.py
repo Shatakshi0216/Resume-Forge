@@ -7,7 +7,7 @@ import json
 # Configure the Gemini API key from Streamlit secrets
 try:
     genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
-    GEMINI_MODEL = genai.GenerativeModel('gemini-1.5-flash-latest')
+    GEMINI_MODEL = genai.GenerativeModel('gemini-flash-latest')
 except (KeyError, Exception):
     GEMINI_MODEL = None
 
