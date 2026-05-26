@@ -1,32 +1,274 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-html, body, [class*="st-"] {
+/* ============================= */
+/* GLOBAL */
+/* ============================= */
+
+html,
+body,
+p,
+span,
+label,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Poppins', sans-serif;
+    color: #F8FAFC;
 }
 
-/* Card-like containers */
-.st-emotion-cache-1r4qj8v {
-    border-radius: 0.75rem;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    border: 1px solid #262730;
+.stApp {
+    background: linear-gradient(135deg, #0B0F19, #111827);
 }
 
-/* Custom button styling */
-.stButton>button {
-    background-color: transparent;
-    border: 2px solid #FF4B4B;
-    color: #FF4B4B;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    transition: all 0.3s ease-in-out;
+/* Main container spacing */
+.block-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
-.stButton>button:hover {
-    background-color: #FF4B4B;
+
+/* ============================= */
+/* HERO SECTION */
+/* ============================= */
+
+.hero-container {
+    padding: 3rem;
+    border-radius: 28px;
+    background: linear-gradient(
+        135deg,
+        rgba(124, 77, 255, 0.22),
+        rgba(0, 212, 255, 0.12)
+    );
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+    margin-bottom: 2rem;
+}
+
+.hero-title {
+    font-size: 3.4rem;
+    font-weight: 800;
     color: #FFFFFF;
-    border-color: #FF4B4B;
+    margin-bottom: 0.6rem;
+    letter-spacing: -1px;
 }
-.stButton>button:focus {
-    box-shadow: none !important;
-    color: #FFFFFF !important;
+
+.hero-subtitle {
+    color: #CBD5E1;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* ============================= */
+/* GLASS CARDS */
+/* ============================= */
+
+.glass-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(14px);
+    border-radius: 22px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    margin-bottom: 1rem;
+}
+
+/* Streamlit containers */
+[data-testid="stVerticalBlock"] > div {
+    border-radius: 18px;
+}
+
+/* ============================= */
+/* BUTTONS */
+/* ============================= */
+
+/* MAIN ACTION BUTTONS ONLY */
+
+div.stButton > button:not([kind="secondary"]) {
+    width: 100%;
+    height: 3.3rem;
+    border: none;
+    border-radius: 14px;
+    background: linear-gradient(90deg, #7C4DFF, #00D4FF);
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 18px rgba(124,77,255,0.3);
+}
+
+div.stButton > button:not([kind="secondary"]):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(124,77,255,0.45);
+}
+
+div.stButton > button:not([kind="secondary"]):focus {
+    outline: none !important;
+    box-shadow: 0 0 0 0 rgba(0,0,0,0) !important;
+}
+
+/* FIX STREAMLIT FILE UPLOADER BUTTON */
+
+/* Uploader text fix */
+
+[data-testid="stFileUploader"] small {
+    color: #CBD5E1 !important;
+}
+
+[data-testid="stFileUploader"] div {
+    overflow: visible !important;
+}
+
+[data-testid="stFileUploader"] button p {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: normal !important;
+}
+
+[data-testid="stFileUploader"] section {
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* ============================= */
+/* FILE UPLOADER */
+/* ============================= */
+
+[data-testid="stFileUploader"] {
+    border: 2px dashed #7C4DFF;
+    border-radius: 20px;
+    padding: 1.2rem;
+    background: rgba(255,255,255,0.03);
+    transition: all 0.3s ease;
+}
+
+[data-testid="stFileUploader"]:hover {
+    border-color: #00D4FF;
+    background: rgba(255,255,255,0.05);
+}
+
+/* ============================= */
+/* NAVIGATION */
+/* ============================= */
+
+.navbar {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 0.6rem;
+    border-radius: 18px;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(14px);
+}
+
+/* ============================= */
+/* METRIC CARDS */
+/* ============================= */
+
+.metric-card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(14px);
+    transition: 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+.metric-card h3 {
+    color: #CBD5E1;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.metric-card h1 {
+    font-size: 2.5rem;
+    color: white;
+    font-weight: 700;
+}
+
+/* ============================= */
+/* SIDEBAR */
+/* ============================= */
+
+[data-testid="stSidebar"] {
+    background: #111827;
+    border-right: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ============================= */
+/* SCROLLBAR */
+/* ============================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0B0F19;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #7C4DFF;
+    border-radius: 20px;
+}
+
+/* ============================= */
+/* HEADINGS */
+/* ============================= */
+
+h1, h2, h3 {
+    color: white !important;
+    font-weight: 700 !important;
+}
+
+/* ============================= */
+/* INFO / SUCCESS BOXES */
+/* ============================= */
+
+.stAlert {
+    border-radius: 16px !important;
+    border: none !important;
+}
+
+/* ============================= */
+/* PLOTLY CHART */
+/* ============================= */
+
+.js-plotly-plot {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.stApp::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: rgba(124,77,255,0.15);
+    filter: blur(120px);
+    top: -100px;
+    right: -100px;
+    z-index: -1;
+}
+
+.stApp::after {
+    content: "";
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: rgba(0,212,255,0.12);
+    filter: blur(120px);
+    bottom: -100px;
+    left: -100px;
+    z-index: -1;
 }
